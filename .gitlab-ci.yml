@@ -1,0 +1,12 @@
+stages:
+  - build
+
+build-image:
+  stage: build
+  script:
+  - export IMAGE_TAG=$CI_REGISTRY_IMAGE:v0.1
+  - docker login -u gitlab-ci-token -p $CI_JOB_TOKEN registry.bukalapak.io
+  - docker build -t $IMAGE_TAG -f Dockerfile .
+  - docker push $IMAGE_TAG
+  tags:
+  - build-image-shared
