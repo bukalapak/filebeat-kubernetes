@@ -12,16 +12,18 @@ spec:
         app: filebeat
       name: filebeat
     spec:
+      imagePullSecrets:
+      - name: bl-registry
       containers:
       - name: filebeat
-        image: gitlab.bukalapak.io/bukalapak/filebeat-kubernetes:v0.1
+        image: registry.bukalapak.io/bukalapak/filebeat-kubernetes:v0.1
         resources:
           limits:
             cpu: 50m
             memory: 50Mi
         env:
           - name: LOGSTASH_HOSTS
-            value: myhost.com:5000
+            value: '["172.16.72.140:5044", "172.16.72.140:5045"]'
           - name: FILEBEAT_HOST
             valueFrom:
                 fieldRef:
