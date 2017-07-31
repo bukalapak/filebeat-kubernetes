@@ -17,6 +17,7 @@ spec:
       containers:
       - name: filebeat
         image: registry.bukalapak.io/bukalapak/filebeat-kubernetes:v0.1
+        imagePullPolicy: Always
         resources:
           limits:
             cpu: 50m
