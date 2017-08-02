@@ -13,7 +13,7 @@ spec:
       name: filebeat
     spec:
       imagePullSecrets:
-      - name: bl-registry
+      - name: blregistry
       containers:
       - name: filebeat
         image: registry.bukalapak.io/bukalapak/filebeat-kubernetes:v0.1
@@ -38,9 +38,6 @@ spec:
           mountPath: /var/lib/docker/containers
           readOnly: true
       terminationGracePeriodSeconds: 30
-      tolerations:
-      - key: node-role.kubernetes.io/master
-        effect: NoSchedule
       volumes:
       - name: varlog
         hostPath:
