@@ -23,10 +23,8 @@ spec:
             cpu: 500m
             memory: 50Mi
         env:
-          - name: LOG_LEVEL
-            value: debug
           - name: LOGSTASH_HOSTS
-            value: '["172.16.72.140:6000"]'
+            value: '["172.16.72.144:5044", "172.16.72.145:5044"]'
           - name: FILEBEAT_HOST
             valueFrom:
                 fieldRef:
