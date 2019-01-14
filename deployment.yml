@@ -24,7 +24,7 @@ spec:
             memory: 50Mi
         env:
           - name: LOGSTASH_HOSTS
-            value: '["172.16.72.144:5044", "172.16.72.145:5044"]'
+            value: '["172.16.72.144:6044", "172.16.72.145:6044"]'
           - name: FILEBEAT_HOST
             valueFrom:
                 fieldRef:
