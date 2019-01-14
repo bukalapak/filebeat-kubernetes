@@ -21,7 +21,7 @@ spec:
         resources:
           limits:
             cpu: 500m
-            memory: 50Mi
+            memory: 500Mi
         env:
           - name: LOGSTASH_HOSTS
             value: '["172.16.72.144:6044", "172.16.72.145:6044"]'
